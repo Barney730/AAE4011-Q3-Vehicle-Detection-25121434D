@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>vehicle_detection</name>
+  <version>1.0.0</version>
+  <description>ROS-based vehicle detection with YOLOv8</description>
+  <maintainer email="your.email@connect.polyu.hk">Your Name</maintainer>
+  <license>MIT</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>cv_bridge</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>cv_bridge</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+</package>
