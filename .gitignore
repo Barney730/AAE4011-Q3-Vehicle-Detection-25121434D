@@ -1,0 +1,5 @@
+*.bag
+__pycache__/
+build/
+devel/
+*.pyc
