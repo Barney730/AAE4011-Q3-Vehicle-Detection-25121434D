@@ -28,30 +28,28 @@ AAE4011-Q3-Vehicle-Detection-25121434D/
 
 ## 4. Prerequisites
 
-*
-Ubuntu 20.04 + ROS Noetic
-pip3 install ultralytics opencv-python
-sudo apt install ros-noetic-cv-bridge ros-noetic-image-view
-*
+- Ubuntu 20.04 + ROS Noetic
+- pip3 install ultralytics opencv-python
+- sudo apt install ros-noetic-cv-bridge ros-noetic-image-view
 
 ## 5. How to Run *(Q3.1 — 2 marks)*
 
-# 1. Place rosbag
+1. Place rosbag
 mkdir -p data
 cp /path/to/your/assignment_rosbag.bag data/
 
-# 2. Build
+2. Build
 cd ~/catkin_ws   # or your workspace
 catkin_make
 source devel/setup.bash
 
-# 3. Terminal 1 - Run detector
+3. Terminal 1 - Run detector
 roslaunch vehicle_detection detector.launch
 
-# 4. Terminal 2 - Play rosbag
+4. Terminal 2 - Play rosbag
 rosbag play data/assignment_rosbag.bag --loop
 
-# 5. You will see OpenCV window + green stats + rqt_image_view /vehicle_detection/image works
+5. You will see OpenCV window + green stats + rqt_image_view /vehicle_detection/image works
 
 ## 6. Sample Results
 
