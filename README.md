@@ -14,7 +14,7 @@
 
 ## 3. Repository Structure
 
-*AAE4011-Q3-Vehicle-Detection-XXXX/
+AAE4011-Q3-Vehicle-Detection-25121434D/
 ├── README.md
 ├── extract_from_rosbag.py
 ├── .gitignore
@@ -24,7 +24,7 @@
     ├── launch/
     │   └── detector.launch
     └── scripts/
-        └── vehicle_detector.py         # ← main detection node*
+        └── vehicle_detector.py         # ← main detection node
 
 ## 4. Prerequisites
 
@@ -36,7 +36,7 @@ sudo apt install ros-noetic-cv-bridge ros-noetic-image-view
 
 ## 5. How to Run *(Q3.1 — 2 marks)*
 
-*# 1. Place rosbag
+# 1. Place rosbag
 mkdir -p data
 cp /path/to/your/assignment_rosbag.bag data/
 
@@ -51,7 +51,7 @@ roslaunch vehicle_detection detector.launch
 # 4. Terminal 2 - Play rosbag
 rosbag play data/assignment_rosbag.bag --loop
 
-# 5. You will see OpenCV window + green stats + rqt_image_view /vehicle_detection/image works*
+# 5. You will see OpenCV window + green stats + rqt_image_view /vehicle_detection/image works
 
 ## 6. Sample Results
 
@@ -80,15 +80,15 @@ rosbag play data/assignment_rosbag.bag --loop
 
 ### (c) How to Improve Accuracy? *(2 marks)*
 
-*Fine-tune YOLOv8 on drone-specific aerial dataset (VisDrone or custom labeled PolyU images) — this would reduce false positives from birds/shadows because the model would learn top-down perspective.
-Add multi-sensor fusion (e.g., combine camera + LiDAR point cloud) — depth information would filter distant false detections and improve 3D bounding boxes.*
+- Fine-tune YOLOv8 on drone-specific aerial dataset (VisDrone or custom labeled PolyU images) — this would reduce false positives from birds/shadows because the model would learn top-down perspective.
+- Add multi-sensor fusion (e.g., combine camera + LiDAR point cloud) — depth information would filter distant false detections and improve 3D bounding boxes.
 
 ### (d) Real-World Challenges *(2 marks)*
 
-*Computational load on drone hardware: YOLOv8n is light but still needs GPU/Neural Processing Unit; a small drone may overheat or drop frames in real flight.
-Lighting and motion blur: rosbag is recorded in good conditions, but real UAS face changing sunlight, shadows, and fast camera motion — detection accuracy drops dramatically without domain adaptation or image enhancement.*
+- Computational load on drone hardware: YOLOv8n is light but still needs GPU/Neural Processing Unit; a small drone may overheat or drop frames in real flight.
+- Lighting and motion blur: rosbag is recorded in good conditions, but real UAS face changing sunlight, shadows, and fast camera motion — detection accuracy drops dramatically without domain adaptation or image enhancement.
 
 ## 9. References
 
-*Ultralytics YOLOv8: https://docs.ultralytics.com
-ROS cv_bridge documentation*
+- Ultralytics YOLOv8: https://docs.ultralytics.com
+- ROS cv_bridge documentation
