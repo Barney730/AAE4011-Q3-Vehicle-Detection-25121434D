@@ -13,7 +13,7 @@
 *I chose YOLOv8n (Ultralytics) because it is single-stage, extremely fast (real-time on CPU), accurate for multiple vehicle classes (car, bus, truck, bicycle), and requires zero training. It automatically extracts features via CNN backbone — perfect for UAS edge deployment.*
 
 ## 3. Repository Structure
-
+```bash
 AAE4011-Q3-Vehicle-Detection-25121434D/
 ├── README.md
 ├── extract_from_rosbag.py
@@ -25,7 +25,7 @@ AAE4011-Q3-Vehicle-Detection-25121434D/
     │   └── detector.launch
     └── scripts/
         └── vehicle_detector.py         # ← main detection node
-
+```
 ## 4. Prerequisites
 
 - Ubuntu 20.04 + ROS Noetic
@@ -33,7 +33,7 @@ AAE4011-Q3-Vehicle-Detection-25121434D/
 - sudo apt install ros-noetic-cv-bridge ros-noetic-image-view
 
 ## 5. How to Run *(Q3.1 — 2 marks)*
-
+```bash
 1. Place rosbag
 mkdir -p data
 cp /path/to/your/assignment_rosbag.bag data/
@@ -50,7 +50,7 @@ roslaunch vehicle_detection detector.launch
 rosbag play data/assignment_rosbag.bag --loop
 
 5. You will see OpenCV window + green stats + rqt_image_view /vehicle_detection/image works
-
+```
 ## 6. Sample Results
 
 *Include:*
