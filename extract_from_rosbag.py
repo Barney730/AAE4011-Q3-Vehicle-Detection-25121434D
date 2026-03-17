@@ -1,33 +1,22 @@
 #!/usr/bin/env python3
+import sys
 import rosbag
 from cv_bridge import CvBridge
 import cv2
 
-bag_path = 'data/assignment_rosbag.bag'   # ← CHANGE TO YOUR BAG PATH
-image_topic = None
+bag_path = sys.argv[1] if len(sys.argv) > 1 else 'data/assignment_rosbag.bag'
+topic = None
 bridge = CvBridge()
 count = 0
-width = height = 0
 
-bag = rosbag.Bag(bag_path)
-print("=== Rosbag Info ===")
-print(bag.get_type_and_topic_info())
-
-# Auto-detect first image topic
-for topic, msg, t in bag.read_messages():
-    if topic.endswith('/image_raw') or 'image' in topic.lower():
-        image_topic = topic
-        cv_img = bridge.imgmsg_to_cv2(msg, desired_encoding="bgr8")
-        height, width = cv_img.shape[:2]
+print("=== Extracting from rosbag ===")
+for topic, msg, t in rosbag.Bag(bag_path).read_messages():
+    if 'image' in topic.lower():
+        cv_img = bridge.imgmsg_to_cv2(msg, "bgr8")
+        if count == 0:
+            cv2.imwrite("sample_first_frame.jpg", cv_img)
         count += 1
-        break
 
-# Count all frames
-for topic, msg, t in bag.read_messages(topics=[image_topic]):
-    count += 1
-
-bag.close()
-
-print(f"\n✅ Extracted {count} frames")
-print(f"Topic: {image_topic}")
-print(f"Resolution: {width} x {height}")
+print(f"✅ Done! Total images: {count}")
+print(f"Topic: {topic}")
+print(f"Sample saved: sample_first_frame.jpg")
