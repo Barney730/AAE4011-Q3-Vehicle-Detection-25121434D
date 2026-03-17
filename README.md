@@ -46,7 +46,7 @@ AAE4011-Q3-Vehicle-Detection-25121434D/
 
 ![IMG_1786](https://github.com/user-attachments/assets/14f213f5-9e0d-4ca0-88a7-4638cef75439)
 
-- Total frames: 1142,
+- Total frames: 1142
 - Vehicles detected: 2201
 
 ## 7. Video Demonstration *(Q3.2 — 5 marks)*
