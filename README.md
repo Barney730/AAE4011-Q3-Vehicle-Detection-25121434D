@@ -1,6 +1,6 @@
 # AAE4011 Assignment 1 — Q3: ROS-Based Vehicle Detection from Rosbag
 
-> **Student Name:** Hung Yan Kin Barney | **Student ID:** 25121434D | **Date:** 14/3/2026
+> **Student Name:** Hung Yan Kin Barney | **Student ID:** 25121434D | **Date:** 17/3/2026
 
 ---
 
@@ -34,37 +34,24 @@ AAE4011-Q3-Vehicle-Detection-25121434D/
 
 ## 5. How to Run *(Q3.1 — 2 marks)*
 ```bash
-1. Place rosbag
-mkdir -p data
-cp /path/to/your/assignment_rosbag.bag data/
-
-2. Build
-cd ~/catkin_ws   # or your workspace
-catkin_make
-source devel/setup.bash
-
-3. Terminal 1 - Run detector
-roslaunch vehicle_detection detector.launch
-
-4. Terminal 2 - Play rosbag
-rosbag play data/assignment_rosbag.bag --loop
-
-5. You will see OpenCV window + green stats + rqt_image_view /vehicle_detection/image works
+1. cd ~/catkin_ws
+2. source devel/setup.bash
+3. rosrun vehicle_detector bag_processor.py
 ```
 ## 6. Sample Results
 
-*Include:*
-- Image extraction summary (total frames, resolution, topic name)
-- Detection results (sample screenshot, detection statistics)
+![IMG_1784](https://github.com/user-attachments/assets/d432c6e4-28e8-4f19-ab9b-386ffe22e1aa)
+
+![IMG_1785](https://github.com/user-attachments/assets/d5b32035-5aaf-47f7-a865-1008fa1b60e4)
+
+![IMG_1786](https://github.com/user-attachments/assets/14f213f5-9e0d-4ca0-88a7-4638cef75439)
+
+- Total frames: 1142,
+- Vehicles detected: 2201
 
 ## 7. Video Demonstration *(Q3.2 — 5 marks)*
 
-**Video Link:** [YouTube (Unlisted)](https://youtu.be/your-link-here)
-
-*The video (1–3 min) should show:*
-- (a) Launching the ROS package
-- (b) The UI displaying detection results
-- (c) A brief explanation of the results
+**Video Link:** YouTube (https://youtu.be/BARgCbP6Tvk?si=cKlspMAW03A1jENh)
 
 ## 8. Reflection & Critical Analysis *(Q3.3 — 8 marks, 300–500 words)*
 
